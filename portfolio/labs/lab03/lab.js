@@ -21,7 +21,7 @@ function readFiles(files){
 		reader.readAsText(files[i], 'UTF-8');
 
 		reader.onload = function(evt){
-			var span = document . createElement('span');
+			var span = document.createElement('span');
 			span.setAttribute("class", "svgshow");
 			span.innerHTML = evt.target.result;
 			document.getElementById('svgimage').insertBefore(span, null);
@@ -46,17 +46,17 @@ function readFiles(files){
     	readFiles(files);
     }
     function handleDragOver(evt){
-    	evt.sopPropagation();
+    	evt.stopPropagation();
     	evt.preventDefault();
     	evt.dataTransfer.dropEffect = 'copy';
     }
 
 
 function start(e) {
-	document.getElementById('files').addEventListener('change',handleFileSelect, false);
+	document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
 	var dropZone = document.getElementById('drop_zone');
-	dropZone.addEventListener('dragover',handleDragOver, false);
+	dropZone.addEventListener('dragover', handleDragOver, false);
 	dropZone.addEventListener('drop', handleFileSelect_drag, false);
 }
 
