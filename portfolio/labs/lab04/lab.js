@@ -1,8 +1,8 @@
 
 
   function issueCard() {
-	for(var i = 1;i <= 16; i++){
-	  var r = Math.floor((Math.random()*4));
+	for(var i = 1; i <= 16; i++){
+	  var r = Math.floor((Math.random() * 4));
 	 switch(r){
 			case 0: $('#d2').append('<img id="img' + i +'" class="issue club">');
 			        $('#d3').append('<img class="ref club">');
@@ -11,7 +11,7 @@
 			        $('#d3').append('<img class="ref diamonds">');
 			        break;
 			case 2: $('#d2').append('<img id="img' + i +'" class="issue hearts">');
-			        $('#d3').append('<img class="ref hearts">');
+	   		        $('#d3').append('<img class="ref hearts">');
 			        break;
 			case 3: $('#d2').append('<img id="img' + i +'" class="issue spades">');
 			        $('#d3').append('<img class="ref spades">');
@@ -56,26 +56,26 @@ $(function() {
 			$('#i1').val( 1 );
 			$('#i4').val( this.id );
 
-			if( $(this).hasClass("club") ){
+			if( $(this).hasClass("club") ) {
 				first = 'club';
-			} else if ($(this).hasClass("diamonds") ){
+			} else if ( $(this).hasClass("diamonds") ){
 				first = 'diamonds';
-			} else if ($(this).hasClass("hearts") ){
+			} else if ( $(this).hasClass("hearts") ) {
 				first = 'hearts';
 			} else{
 				first = 'spades';
 			}
 			$('#i2').val( first );
 		
-		    } else if (flip == 1){
+		    } else if (flip == 1) {
                 $('#i1').val( 2 );
                 $('#i5').val( this.id );
 
-                if ( $(this).hasClass("club")){
+                if ( $(this).hasClass("club") ) {
                 	second = 'club';
-                } else if ( $(this).hasClass("diamonds")){
+                } else if ( $(this).hasClass("diamonds") ) {
                 	second = 'diamonds';
-                } else if ( $(this).hasClass("hearts")){
+                } else if ( $(this).hasClass("hearts") ) {
                 	second = 'hearts';
                 } else {
                 	second = 'spades';
@@ -85,10 +85,11 @@ $(function() {
                 var myid1 = '#' + $('#i4').val();
                 var myid2 = '#' + $('#i5').val();
 
-                if(first == second){
+                if (first == second) {
                 	setTimeout(function(){
                 		$(myid1).addClass('done');
-                		$(myid2).addClass('done');
+                		
+                        $(myid2).addClass('done');
 
                 		first = '';
                 		second = '';
@@ -100,7 +101,7 @@ $(function() {
 
                 	}, 500);
                 } else {
-                	setTimeout(function(){
+                	setTimeout(function() {
                 		$(myid1).removeClass('selected');
                 		$(myid2).removeClass('selected');
                 		$(myid1).addClass('back');
@@ -117,6 +118,7 @@ $(function() {
                 	}, 200);
                 }
             }
+            
             update();
         });
 
